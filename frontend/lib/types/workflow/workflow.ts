@@ -31,7 +31,7 @@ export interface BaseNode {
 }
 
 // Generic node data interface
-export interface NodeData {
+export interface NodeData extends BaseNode {
     label?: string
     description?: string
     [key: string]: unknown
@@ -49,8 +49,8 @@ export interface WorkflowEdge {
     id: string
     source: string
     target: string
-    sourceHandle?: string
-    targetHandle?: string
+    sourceHandle?: string | null
+    targetHandle?: string | null
     type?: string
     data?: EdgeData
 }
